@@ -1,22 +1,20 @@
 {
-    "name": "{{cookiecutter.project_slug}}",
-    "description" : "",
-    "license" : "",
-    "type" : "project",
-    "keywords" : [
+    "name": "{{ cookiecutter.package_name }}",
+    "type": "library",
+    "description": "{{ cookiecutter.project_name }}",
+    "keywords": [
+        "php", 
         "laminas",
-        "{{cookiecutter.project_slug}}"
+        "{{ cookiecutter.github_user }}"
     ],
-    "homepage": "",
-    "authors": [{
-        "name": "",
-        "email": ""
-    }],
-    "config": {
-        "platform": {
-            "php": "7.2"
+    "homepage": "{{ cookiecutter.repo_url }}",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "{{ cookiecutter.author_name }}",
+            "email": "{{ cookiecutter.author_email }}"
         }
-    },
+    ],
     "require": {
         "php": "^7.2",
         "laminas/laminas-mvc": "^3.1",
