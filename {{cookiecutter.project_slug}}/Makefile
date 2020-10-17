@@ -26,19 +26,19 @@ composer-install:
 		-w /srv/$$(basename "`pwd`") \
 		-e COMPOSER_HOME="/srv/$$(basename "`pwd`")/.composer" \
 		--user $$(id -u):$$(id -g) \
-	composer install --no-plugins --no-scripts --no-dev --prefer-dist -v --ignore-platform-reqs
+	composer composer install --no-plugins --no-scripts --no-dev --prefer-dist -v --ignore-platform-reqs
 composer-update:
 	docker run --rm -it \
 		-v $$(pwd)/$$(basename "`pwd`"):/srv/$$(basename "`pwd`") \
 		-w /srv/$$(basename "`pwd`") \
 		-e COMPOSER_HOME="/srv/$$(basename "`pwd`")/.composer" \
 		--user $$(id -u):$$(id -g) \
-	composer update -v --no-dev
+	composer composer update -v --no-dev
 composer:
 	docker run --rm -it \
 		-v $$(pwd)/$$(basename "`pwd`"):/srv/$$(basename "`pwd`") \
 		-w /srv/$$(basename "`pwd`") \
 		-e COMPOSER_HOME="/srv/$$(basename "`pwd`")/.composer" \
 		--user $$(id -u):$$(id -g) \
-	composer $(filter-out $@,$(MAKECMDGOALS))
+	composer composer $(filter-out $@,$(MAKECMDGOALS))
 
