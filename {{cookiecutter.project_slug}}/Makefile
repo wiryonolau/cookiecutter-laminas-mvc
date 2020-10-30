@@ -23,6 +23,7 @@ start:
         -e MYSQL_DATABASE=mydata \
         -v $$(pwd)/mysql_data:/var/lib/mysql \
         -v $$(pwd)/init_db:/docker-entrypoint-initdb.d \
+        --user $$(id -u):$$(id -g) \
         --name $$(basename "`pwd`")_mysql \
         --network $$(basename "`pwd`") \
     mysql:5.7
